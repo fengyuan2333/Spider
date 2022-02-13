@@ -39,8 +39,6 @@ class ImagesPathPipeline(ImagesPipeline):
         category=item['category']
         try:
             image_guid = hashlib.sha1(to_bytes(request.url)).hexdigest()
-            #print('=========================',f'full/{category}/{image_guid}.jpg')
         except Exception as e:
-            pass
-            #print(e,'错误1111111111111111111111')
+            print('错误：'e)
         return f'full/{category}/{image_guid}.jpg'
